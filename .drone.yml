@@ -14,4 +14,4 @@ steps:
       - echo bonjour monde
     when:
       branch:
-        - develop
+        - master
