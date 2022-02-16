@@ -15,8 +15,6 @@ steps:
     image: plugins/docker
     registry:
     repo: doggfood/charlotte
-    tags:
-      - latest
 
 trigger:
   event:
