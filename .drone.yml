@@ -6,10 +6,12 @@ steps:
   - name: en
     image: alpine
     commands:
-      - echo hello
-      - echo world
+      - echo hello world
 
   - name: fr
     image: alpine
     commands:
       - echo bonjour monde
+    when:
+      branch:
+        - develop
