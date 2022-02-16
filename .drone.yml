@@ -13,7 +13,7 @@ steps:
 
   - name: publish
     image: plugins/docker
-    repo: doggfood/charlotte
+    repo: dogfood/charlotte
 
 trigger:
   event:
