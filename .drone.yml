@@ -19,6 +19,6 @@ steps:
       - latest
 
 trigger:
-  event
+  event:
     - push
 
