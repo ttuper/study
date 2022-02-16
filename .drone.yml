@@ -13,7 +13,6 @@ steps:
 
   - name: publish
     image: plugins/docker
-    registry:
     repo: doggfood/charlotte
 
 trigger:
