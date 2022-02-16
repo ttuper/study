@@ -4,16 +4,21 @@ name: charlotte
 
 steps:
   - name: build
-    image: golang:1.9
+    image: golang:latest
+    environment:
+      GOPROXY: https://mirrors.aliyun.com/goproxy/
     commands:
-      - pwd
-      - go env
-      - go version
-      - go build
+      - CGO_ENABLED=0 go build -o demo-app
 
-  - name: publish
+  - name: docker
     image: plugins/docker
-    repo: MissTianTian/study
+    repo: ztt/drone-demo
+    username:
+      from_secret: dock_username
+    password:
+      from_secret: docker_password
+    tags:
+      - latest
 
 trigger:
   event:
