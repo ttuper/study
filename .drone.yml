@@ -13,7 +13,7 @@ steps:
   - name: docker
     image: plugins/docker
     settings:
-      repo: ztt/drone-demo
+      repo: happyztt/drone-demo
 
 trigger:
   event:
