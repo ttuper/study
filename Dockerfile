@@ -8,4 +8,4 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositorie
   rm -rf /var/cache/apk/*
 COPY demo-app .
 ENV TZ=Asia/Shanghai
-ENTRYPOINT ["/app/main"]
+RUN pwd /app
