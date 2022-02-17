@@ -14,10 +14,6 @@ steps:
     image: plugins/docker
     settings:
       repo: ztt/drone-demo
-      username:
-        from_secret: docker_username
-      password:
-        from_secret: docker_password
 
 trigger:
   event:
