@@ -1,17 +1,25 @@
 kind: pipeline
 type: docker
-name: greeting
+name: charlotte
 
 steps:
-  - name: en
-    image: alpine
+  - name: build
+    image: golang:latest
+    environment:
+      GOPROXY: https://mirrors.aliyun.com/goproxy/
     commands:
-      - echo hello world
+      - CGO_ENABLED=0 go build -o demo-app
 
-  - name: fr
-    image: alpine
-    commands:
-      - echo bonjour monde
-    when:
-      branch:
-        - master
+  - name: docker
+    image: plugins/docker
+    settings:
+      repo: ztt/drone-demo
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
+
+trigger:
+  event:
+    - push
+
