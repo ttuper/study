@@ -1,4 +1,4 @@
-kind: pipeline
+kind: secret
 type: docker
 name: charlotte
 
@@ -12,11 +12,12 @@ steps:
 
   - name: docker
     image: plugins/docker
-    repo: ztt/drone-demo
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
+    settings:
+      repo: ztt/drone-demo
+      username:
+        from_secret: docker_username
+      password:
+        from_secret: docker_password
     tags:
       - latest
 
